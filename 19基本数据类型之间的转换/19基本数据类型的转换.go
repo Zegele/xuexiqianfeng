@@ -21,7 +21,7 @@ func main() {
 	b = int16(a)
 	fmt.Println(a, b)
 
-	f1 := 4.83 //推断定义，系统归为float64类型
+	f1 := 4.83 //简短定义，系统归为float64类型 对4.83进行了类型推断
 	var c int
 	c = int(f1) //只取整数部分
 	fmt.Println(f1, c)

@@ -41,11 +41,12 @@ func main() {
 	fmt.Printf("num2的数值是： %d\n", num2)
 
 	//第二种类型推断
-	var name = "二狗"
+	var name = "二狗" //类型推断
 	fmt.Printf("类型是：%T，数值是：%s\n", name, name)
 
-	//第三种，简短定义，也叫简短声明
+	//第三种，简短定义，也叫简短声明 简短声明其实也是类型推断。
 	sum := 100
+	fmt.Printf("%T\n", sum)
 	fmt.Println(sum)
 
 	//多个变量同时定义
@@ -58,7 +59,7 @@ func main() {
 	var m, n int = 100, 200
 	fmt.Println(m, n)
 
-	var n1, n2, n3 = 100, 3.14, "SHIME"
+	var n1, n2, n3 = 100, 3.14, "SHIME" //类型推断
 	fmt.Println(n1, n2, n3)
 
 	var (
