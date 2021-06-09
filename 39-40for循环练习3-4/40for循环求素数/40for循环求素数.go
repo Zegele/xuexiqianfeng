@@ -37,7 +37,10 @@ func main() {
 			}
 		}
 		if count == 2 { //这一步借鉴了老师的。
-			fmt.Println(i)
+			fmt.Println(i, "是我要的")
+		}
+		if count > 2 {
+			fmt.Println(i, "不是我要的")
 		}
 	}
 
