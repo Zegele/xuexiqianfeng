@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	/*
 		map: 映射，是一种专门用于存储键值对的集合。 属于引用类型。
+		什么时候使用map，两个类型一一对应时？
 
 		存储特点：
 			A: 存储的是无序的键值对
@@ -47,6 +48,6 @@ func main() {
 	//map1[1] = "hello" //panic: assignment to entry in nil map 没有办法向nil map中分配数据
 	if map1 == nil {
 		map1 = make(map[int]string) //如果map是 nil ，就先make创建下。这样就不是nil了。
-		fmt.Println(map1 == nil)
+		fmt.Println("**", map1 == nil)
 	}
 }

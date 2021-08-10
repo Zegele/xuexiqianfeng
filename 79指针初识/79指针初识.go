@@ -22,7 +22,9 @@ func main() {
 	var p1 *int     //p1就是指针
 	fmt.Println(p1) //<nil> 空指针 还没有存地址
 	p1 = &a
-	fmt.Println("p1的数值：", p1)                 //p1中存储的是a的地址。
+	fmt.Println("p1的数值：", p1)   //p1中存储的是a的地址。 注意！！！：与第80课的数组的指针显示的区别
+	fmt.Printf("***, %p\n", p1) //%p就是用来代表内存地址的
+
 	fmt.Printf("p1自己的地址：%p\n", &p1)           //指针p1自己的地址
 	fmt.Println("p1的数值，是a的地址，该地址存储的数据：", *p1) //获取指针指向的变量的数值。
 
