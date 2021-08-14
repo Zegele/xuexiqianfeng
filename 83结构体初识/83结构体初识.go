@@ -18,7 +18,7 @@ func main() {
 
 	//2.初始化结构体的方法：
 	//1. 方法一：
-	var p1 Person
+	var p1 Person   // 也可以写成： var p11 Person = Person{name: "j", age: 2}
 	fmt.Println(p1) //各字段的零值
 	p1.name = "小李"  //p1.name 就可以访问结构体中的字段了。
 	p1.age = 30
