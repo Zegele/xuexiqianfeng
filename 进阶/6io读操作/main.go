@@ -73,3 +73,10 @@ func main() {
 		fmt.Println(string(bs[:n]))
 	}
 }
+
+/*
+拓展:
+ReadFull
+ReaderAt
+ReaderFrom
+*/
