@@ -79,10 +79,12 @@ func CopyFile2(srcFile, destFile string) (int64, error) {
 //方法三：ioutil包下的ioutil.WriteFile() 和 ioutil.ReadFile()
 func CopyFile3(srcFile, destFile string) (int, error) {
 	bs, err := ioutil.ReadFile(srcFile) //ioutil.ReadFile(源文件)（字节切片，error）  ioutil.ReadFile()函数读取源文件，并返回字节切片和err。
+	//一次性读取（不适合太大的文件）
 	if err != nil {
 		return 0, err
 	}
 	err = ioutil.WriteFile(destFile, bs, 0777)
+	//一次性写入
 	if err != nil {
 		return 0, err
 	}
