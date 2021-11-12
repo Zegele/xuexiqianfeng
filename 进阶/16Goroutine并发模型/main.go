@@ -82,7 +82,5 @@ func main() {
 		2.3 runqueue执行完成
 		当其中一个Processor的runqueue为空，没有goroutine可以调度。他会从另外一个上下文偷取一般的goroutine。
 		（图12：00）
-
-
 	*/
 }
