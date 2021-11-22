@@ -12,7 +12,15 @@ package main
 		func (v Value) Call(in []Value) []Value// 参数 in []Value 是切片类型，是设置函数的参数。如果函数没有参数，就使用nil，或空切片。
 
 	通过反射，调用方法。
-	先获取结构体对象，然后
+	先获取结构体对象，然后获取对应的方法对象，再将方法对象进行Call()调用
+
+	3.4 通过反射调用函数（比方法调用简单）
+	首先我们要先确认一点，函数像普通的变量一样，之前的章节中我们在讲到函数的本质的时候，是可以把函数作为一种变量类型的，而且是引用类型。
+	如果说Fun()是一个函数，那么f1:=Fun也是可以的，那么f1也是函数，
+	如果直接调用f1()，那么运行的就是Fun()函数
+
+	那么我们就先通过ValueOf()来获取函数的反射对象，可以判断它的Kind，是一个func，那么就可以执行Call()进行函数调用。
+
 */
 import (
 	"fmt"
@@ -40,6 +48,7 @@ func main() {
 		step2：获取对应的方法对象 MethodByName()
 		step3:将方法对象进行调用：Call()
 	*/
+	//一、通过反射来进行方法的调用
 	p1 := Person{"小花", 20, "女"}
 	value := reflect.ValueOf(p1)
 	fmt.Printf("kind: %s, type:%s\n", value.Kind(), value.Type()) //kind: struct, type:main.Person
@@ -61,4 +70,7 @@ func main() {
 	//args2 := []reflect.Value{reflect.ValueOf("hhhh")} //要传入字符串类型，但是要先转成反射对象
 
 	methodValue2.Call(args2)
+
+	//二、通过反射来进行函数的调用
+
 }
